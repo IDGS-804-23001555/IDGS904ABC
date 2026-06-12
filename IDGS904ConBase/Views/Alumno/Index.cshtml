@@ -1,0 +1,51 @@
+﻿@model IEnumerable<IDGS904ConBase.Models.Alumno>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
